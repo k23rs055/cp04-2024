@@ -176,13 +176,13 @@
         var canvas = $("#mycanvas")[0];
         var ctx = canvas.getContext("2d");
         var img = new Image();
-        img.src = "ksuisbg.gif";
+        img.src = "dog.png";
         img.onload = function() {
             ctx.drawImage(img,0,0,300,300);
         };
 
         var audio = new Audio();
-        audio.src = "pin.wav";
+        audio.src = "wanwan.mp3";
         audio.play();
         
     }
@@ -206,20 +206,14 @@
         active = false;
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period +"秒");
+        $("#remain").html("残り時間： " + period );
         
     }
 
     // ButtonDがクリックされた時の処理
     function btnDClick(e){
-        active = false;
         rest=0;
         alarm();
-
-        /*active = false;
-        period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
-        $("#time").html("経過時間： 0");
-        $("#remain").html("残り時間： " + period +"秒");*/
     }
     
  
@@ -234,7 +228,7 @@
         }
         if(rest<=0) {
             active = false;
-            alarm();
+            
         }
     } 
 
@@ -253,8 +247,8 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
-    <button id="btnD">Set</button>
+    <button id="btnD">Sound</button>
     <input type="number" id="minute" value=0 >
-    <input type="number" id="second" value=10 >
+    <input type="number" id="second" value=15 >
 </body>
 </html>
